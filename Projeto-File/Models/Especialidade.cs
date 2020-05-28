@@ -17,6 +17,6 @@ namespace Projeto_File.Models
         public DateTime DataInclusao { get; set; }
 
         public int HospitalId { get; set; }
-        public virtual Hospital Hospital { get; set; }
+        public virtual Hospital HospitalVirtual { get; set; }
     }
 }
