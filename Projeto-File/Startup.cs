@@ -27,7 +27,7 @@ namespace Projeto_File
                 options.UseMySql(
                     Configuration.GetConnectionString("myConn")));
 
-            services.AddDefaultIdentity<Usuario>(options => options.SignIn.RequireConfirmedAccount = false)
+            services.AddIdentity<Usuario, NivelAcesso>(options => options.SignIn.RequireConfirmedAccount = false)
                 .AddEntityFrameworkStores<AppDbContext>();
             
             services.AddControllersWithViews();

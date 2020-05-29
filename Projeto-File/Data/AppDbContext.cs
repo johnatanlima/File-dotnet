@@ -25,9 +25,9 @@ namespace Projeto_File.Data
             base.OnModelCreating(builder);
 
             builder.ApplyConfiguration(new UsuarioMapping());
-            builder.ApplyConfiguration(new NivelAcessoMapping());
-            builder.ApplyConfiguration(new Map());
-
+            //builder.ApplyConfiguration(new NivelAcessoMapping());
+            builder.ApplyConfiguration(new EspecialidadeMapping());
+            builder.ApplyConfiguration(new HospitalMapping());
         }
     }
 }

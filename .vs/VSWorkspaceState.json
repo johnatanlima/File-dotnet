@@ -1,6 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Projeto-File",
+    "\\Projeto-File\\Areas",
+    "\\Projeto-File\\Controllers",
+    "\\Projeto-File\\Data"
   ],
   "PreviewInSolutionExplorer": false
 }
