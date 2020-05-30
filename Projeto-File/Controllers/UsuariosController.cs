@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Projeto_File.Controllers
 {
-    public class UsuarioController : Controller
+    public class UsuariosController : Controller
     {
         private readonly UserManager<Usuario> _manager;
         private readonly SignInManager<Usuario> _signIn;
 
-        public UsuarioController(UserManager<Usuario> manager, SignInManager<Usuario> signIn)
+        public UsuariosController(UserManager<Usuario> manager, SignInManager<Usuario> signIn)
         {
             _manager = manager;
             _signIn = signIn;
