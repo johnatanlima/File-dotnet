@@ -48,6 +48,9 @@ namespace Projeto_File
                 "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+";
                 options.User.RequireUniqueEmail = false;
             });
+
+            services.AddScoped<SignInManager<Usuario>, SignInManager<Usuario>>();
+            services.AddScoped<UserManager<Usuario>, UserManager<Usuario>>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

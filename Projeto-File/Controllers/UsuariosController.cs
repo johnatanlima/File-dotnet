@@ -20,14 +20,42 @@ namespace Projeto_File.Controllers
         [HttpGet]
         public IActionResult Registrar()
         {
+            
             return View();
         }
 
         [HttpPost]
-        public IActionResult Registrar(RegistroViewModel registro)
+        public async Task<IActionResult> Registrar(RegistroViewModel registro)
         {
+            if (ModelState.IsValid)
+            {
+                var usuario = new Usuario
+                {
+                    Nome = registro.Nome,
+                    Sobrenome = registro.Sobrenome,
+                    UserName = registro.NomeUsuario,
+                    Email = registro.Email,
+                    Cidade = registro.Cidade
+                };
 
-            return View();
+                var UsuarioCriado = await _manager.CreateAsync(usuario, registro.Senha);
+
+                if (UsuarioCriado.Succeeded)
+                {
+                    await _signIn.SignInAsync(usuario, false);
+
+                    return RedirectToAction("Index", "Home");
+                }               
+            }
+
+            return View(registro);
+        }
+
+        public async Task<IActionResult> Sair()
+        {
+            await _signIn.SignOutAsync();
+
+            return RedirectToAction("Index", "Home");
         }
     }
 }

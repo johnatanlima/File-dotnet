@@ -418,3 +418,4 @@ C:\Users\johw2\Desktop\Workspace .NET Core\File-dotnet\Projeto-File\bin\Debug\ne
 C:\Users\johw2\Desktop\Workspace .NET Core\File-dotnet\Projeto-File\obj\Debug\netcoreapp3.1\Projeto-File.csproj.CoreCompileInputs.cache
 C:\Users\johw2\Desktop\Workspace .NET Core\File-dotnet\Projeto-File\obj\Debug\netcoreapp3.1\Projeto-File.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\johw2\Desktop\Workspace .NET Core\File-dotnet\Projeto-File\obj\Debug\netcoreapp3.1\Projeto-File.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\johw2\Desktop\Workspace .NET Core\File-dotnet\Projeto-File\obj\Debug\netcoreapp3.1\Razor\Views\Usuarios\Registrar.cshtml.g.cs

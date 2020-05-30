@@ -1,6 +1,6 @@
 ﻿@using Microsoft.AspNetCore.Identity
-@inject SignInManager<IdentityUser> _signIn
-@inject UserManager<IdentityUser> _manager
+@inject SignInManager<Usuario> _signIn
+@inject UserManager<Usuario> _manager
 
 <ul class="navbar-nav">
 @if (_signIn.IsSignedIn(User))
@@ -9,18 +9,16 @@
         <a  class="nav-link text-dark" title="Usuário boas vindas">Bem-Vindo @User.Identity.Name!</a>
     </li>
     <li class="nav-item">
-        <form  class="form-inline" asp-action="Sair" asp-controller="Usuarios">
-            <button  type="button" class="btn btn-link text-dark">Sair</button>
-        </form>
+        <a class="nav-link text-dark" asp-action="Sair" asp-controller="Usuarios">Sair</a>
     </li>
 }
 else
 {
     <li class="nav-item">
-        <a class="nav-link text-dark" asp-action="Registrar" asp-controller="Registrar"> Registrar-se</a>
+        <a class="nav-link text-dark" asp-action="Registrar" asp-controller="Usuarios"> Registrar-se</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link text-dark" asp-action="Entrar" asp-controller="Usuarios"> Entrar </a>
+        <a class="nav-link text-dark" readonly asp-action="Entrar" asp-controller="Usuarios"> Entrar </a>
     </li>
 }
 </ul>

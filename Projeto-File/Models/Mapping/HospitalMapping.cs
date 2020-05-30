@@ -22,7 +22,7 @@ namespace Projeto_File.Models.Mapping
             builder.Property(h => h.Foto);
             builder.Property(h => h.Telefone).HasMaxLength(14);
 
-            builder.HasMany(h => h.Especialidades).WithOne(e => e.HospitalVirtual).OnDelete(DeleteBehavior.SetNull);
+            builder.HasMany(h => h.Especialidades).WithOne(e => e.HospitalVirtual).OnDelete(DeleteBehavior.Cascade);
 
         }
     }
