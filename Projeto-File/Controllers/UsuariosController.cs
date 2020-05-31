@@ -57,5 +57,20 @@ namespace Projeto_File.Controllers
 
             return RedirectToAction("Index", "Home");
         }
+
+        //ATRIBUIÇÃO DE PERMISSÕES
+        [HttpGet]
+        public IActionResult RegistrarPermissao()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> RegistrarPermissao(NivelAcesso nivelAcesso)
+        {
+
+
+            return View();
+        }
     }
 }

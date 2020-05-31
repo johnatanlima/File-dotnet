@@ -3,8 +3,14 @@
     "",
     "\\Projeto-File",
     "\\Projeto-File\\Areas",
-    "\\Projeto-File\\Controllers",
-    "\\Projeto-File\\Data"
+    "\\Projeto-File\\Data",
+    "\\Projeto-File\\Models",
+    "\\Projeto-File\\Models\\Mapping",
+    "\\Projeto-File\\Views",
+    "\\Projeto-File\\Views\\Home",
+    "\\Projeto-File\\Views\\Shared",
+    "\\Projeto-File\\wwwroot"
   ],
+  "SelectedNode": "\\Projeto-File\\Projeto-File.sln",
   "PreviewInSolutionExplorer": false
 }

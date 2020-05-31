@@ -1,0 +1,37 @@
+﻿@model Projeto_File.Models.NivelAcesso
+
+@{
+    ViewData["Title"] = "Registro Nivel de Permissao";
+}
+
+<h2>Registrar Permissao de Acesso </h2>
+
+<h4>Nivel de Acesso</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="RegistrarPermissao" asp-controller="Usuarios">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Descricao" class="control-label"> Descrição do nível</label>
+                <input asp-for="Descricao" class="form-control" />
+                <span asp-validation-for="Descricao" class="text-danger"></span>
+            </div>
+           
+            <div class="form-group">
+                <label asp-for="Name" class="control-label">Papel do Usuário</label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+           
+            <div class="form-group">
+                <input type="submit" value="Registrar Nível" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Voltar ao Início</a>
+</div>
+

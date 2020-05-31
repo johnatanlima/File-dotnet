@@ -4,6 +4,6 @@ namespace Projeto_File.Models
 {
     public class NivelAcesso : IdentityRole
     {
-        public string Permissao { get; set; }
+        public string Descricao { get; set; }
     }
 }

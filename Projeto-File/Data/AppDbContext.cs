@@ -5,7 +5,7 @@ using Projeto_File.Models.Mapping;
 
 namespace Projeto_File.Data
 {
-    public class AppDbContext : IdentityDbContext<Usuario>
+    public class AppDbContext : IdentityDbContext<Usuario, NivelAcesso, string>
     {
         public AppDbContext(DbContextOptions<AppDbContext> options)
             : base(options)
