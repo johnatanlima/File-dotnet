@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Projeto_File.Migrations
 {
-    public partial class quarta : Migration
+    public partial class quinta : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -16,8 +16,7 @@ namespace Projeto_File.Migrations
                     Name = table.Column<string>(maxLength: 256, nullable: true),
                     NormalizedName = table.Column<string>(maxLength: 256, nullable: true),
                     ConcurrencyStamp = table.Column<string>(nullable: true),
-                    Discriminator = table.Column<string>(nullable: false),
-                    Permissao = table.Column<string>(nullable: true)
+                    Descricao = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {

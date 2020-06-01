@@ -51,6 +51,7 @@ namespace Projeto_File
 
             services.AddScoped<SignInManager<Usuario>, SignInManager<Usuario>>();
             services.AddScoped<UserManager<Usuario>, UserManager<Usuario>>();
+            services.AddScoped<RoleManager<NivelAcesso>, RoleManager<NivelAcesso>>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Projeto_File.Models;
 using Projeto_File.Models.ViewModels;
 using System.Threading.Tasks;
@@ -10,11 +11,13 @@ namespace Projeto_File.Controllers
     {
         private readonly UserManager<Usuario> _manager;
         private readonly SignInManager<Usuario> _signIn;
+        private readonly RoleManager<NivelAcesso> _role;
 
-        public UsuariosController(UserManager<Usuario> manager, SignInManager<Usuario> signIn)
+        public UsuariosController(RoleManager<NivelAcesso> role, UserManager<Usuario> manager, SignInManager<Usuario> signIn)
         {
             _manager = manager;
             _signIn = signIn;
+            _role = role;
         }
 
         [HttpGet]
@@ -68,9 +71,19 @@ namespace Projeto_File.Controllers
         [HttpPost]
         public async Task<IActionResult> RegistrarPermissao(NivelAcesso nivelAcesso)
         {
+            if (ModelState.IsValid)
+            {
+                bool permissaoExiste = await _role.RoleExistsAsync(nivelAcesso.Name);
 
+                if (!permissaoExiste)
+                {
+                    await _role.CreateAsync(nivelAcesso);
 
-            return View();
+                    return RedirectToAction("Index", "Home");
+                }
+            }
+
+            return View(nivelAcesso);
         }
     }
 }
