@@ -2,8 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\Projeto-File",
-    "\\Projeto-File\\Areas",
-    "\\Projeto-File\\Data",
+    "\\Projeto-File\\Controllers",
+    "\\Projeto-File\\Migrations",
     "\\Projeto-File\\Models",
     "\\Projeto-File\\Models\\Mapping",
     "\\Projeto-File\\Views",

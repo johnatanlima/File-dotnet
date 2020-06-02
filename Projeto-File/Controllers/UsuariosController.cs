@@ -1,8 +1,12 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Projeto_File.Data;
 using Projeto_File.Models;
 using Projeto_File.Models.ViewModels;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Projeto_File.Controllers
@@ -12,12 +16,14 @@ namespace Projeto_File.Controllers
         private readonly UserManager<Usuario> _manager;
         private readonly SignInManager<Usuario> _signIn;
         private readonly RoleManager<NivelAcesso> _role;
+        private readonly AppDbContext _dbContext;
 
-        public UsuariosController(RoleManager<NivelAcesso> role, UserManager<Usuario> manager, SignInManager<Usuario> signIn)
+        public UsuariosController(AppDbContext dbContext, RoleManager<NivelAcesso> role, UserManager<Usuario> manager, SignInManager<Usuario> signIn)
         {
             _manager = manager;
             _signIn = signIn;
             _role = role;
+            _dbContext = dbContext;
         }
 
         [HttpGet]
@@ -84,6 +90,29 @@ namespace Projeto_File.Controllers
             }
 
             return View(nivelAcesso);
+        }
+
+        public async Task<IActionResult> AssociarPermissao()
+        {
+            ViewData["UsuarioId"] = new SelectList(await _dbContext.Usuarios.ToListAsync(), "Id", "UserName");
+            ViewData["NivelAcessoId"] = new SelectList(await _dbContext.NiveisAcessos.ToListAsync(), "Name", "Name");
+
+            return View();
+        }
+
+        public async Task<IActionResult> AssociarPermissao(UsuarioRoleViewModel usuarioRole)
+        {
+            if (ModelState.IsValid)
+            {
+                var usuario = await _dbContext.Usuarios.FindAsync(usuarioRole.UsuarioId);
+
+                await _manager.AddToRoleAsync(usuario, usuarioRole.RoleId);
+
+                return RedirectToAction("Index", "Home");
+            }
+
+            return View(usuarioRole);
+
         }
     }
 }
