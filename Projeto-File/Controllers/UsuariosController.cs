@@ -92,6 +92,7 @@ namespace Projeto_File.Controllers
             return View(nivelAcesso);
         }
 
+        [HttpGet]
         public async Task<IActionResult> AssociarPermissao()
         {
             ViewData["UsuarioId"] = new SelectList(await _dbContext.Usuarios.ToListAsync(), "Id", "UserName");
@@ -100,6 +101,7 @@ namespace Projeto_File.Controllers
             return View();
         }
 
+        [HttpPost]
         public async Task<IActionResult> AssociarPermissao(UsuarioRoleViewModel usuarioRole)
         {
             if (ModelState.IsValid)
