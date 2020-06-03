@@ -1,16 +1,16 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Html;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Projeto_File.Data;
 using Projeto_File.Models;
 using Projeto_File.Models.ViewModels;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace Projeto_File.Controllers
 {
+
     public class UsuariosController : Controller
     {
         private readonly UserManager<Usuario> _manager;
@@ -95,10 +95,15 @@ namespace Projeto_File.Controllers
         [HttpGet]
         public async Task<IActionResult> AssociarPermissao()
         {
-            ViewData["UsuarioId"] = new SelectList(await _dbContext.Usuarios.ToListAsync(), "Id", "UserName");
-            ViewData["NivelAcessoId"] = new SelectList(await _dbContext.NiveisAcessos.ToListAsync(), "Name", "Name");
+            if (User.Identity.IsAuthenticated)
+            {
+                ViewData["UsuarioId"] = new SelectList(await _dbContext.Usuarios.ToListAsync(), "Id", "UserName");
+                ViewData["NivelAcessoId"] = new SelectList(await _dbContext.NiveisAcessos.ToListAsync(), "Name", "Name");
 
-            return View();
+                return View();
+            }
+
+            return StatusCode(403);
         }
 
         [HttpPost]
@@ -108,7 +113,7 @@ namespace Projeto_File.Controllers
             {
                 var usuario = await _dbContext.Usuarios.FindAsync(usuarioRole.UsuarioId);
 
-                await _manager.AddToRoleAsync(usuario, usuarioRole.RoleId);
+                await _manager.AddToRoleAsync(usuario, usuarioRole.NomeRole);
 
                 return RedirectToAction("Index", "Home");
             }

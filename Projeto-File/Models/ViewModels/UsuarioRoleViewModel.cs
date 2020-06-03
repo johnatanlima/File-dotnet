@@ -9,7 +9,7 @@ namespace Projeto_File.Models.ViewModels
     {
         public string UsuarioId { get; set; }
 
-        public string RoleId { get; set; }
+        public string NomeRole { get; set; }
 
     }
 }

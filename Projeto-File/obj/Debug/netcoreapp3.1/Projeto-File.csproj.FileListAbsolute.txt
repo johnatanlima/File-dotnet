@@ -372,7 +372,6 @@ C:\Users\johw2\Desktop\Workspace .NET Core\File-dotnet\Projeto-File\obj\Debug\ne
 C:\Users\johw2\Desktop\Workspace .NET Core\File-dotnet\Projeto-File\obj\Debug\netcoreapp3.1\Projeto-File.dll
 C:\Users\johw2\Desktop\Workspace .NET Core\File-dotnet\Projeto-File\obj\Debug\netcoreapp3.1\Projeto-File.pdb
 C:\Users\johw2\Desktop\Workspace .NET Core\File-dotnet\Projeto-File\obj\Debug\netcoreapp3.1\Projeto-File.genruntimeconfig.cache
-C:\Users\johw2\Desktop\Workspace .NET Core\File-dotnet\Projeto-File\obj\Debug\netcoreapp3.1\Projeto-File.csprojAssemblyReference.cache
 C:\Users\johw2\Desktop\Workspace .NET Core\File-dotnet\Projeto-File\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
 C:\Users\johw2\Desktop\Workspace .NET Core\File-dotnet\Projeto-File\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Workspaces.dll
 C:\Users\johw2\Desktop\Workspace .NET Core\File-dotnet\Projeto-File\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.dll
