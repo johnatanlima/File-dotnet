@@ -1,8 +1,11 @@
 ﻿using System;
+using System.ComponentModel;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Pomelo.EntityFrameworkCore.MySql.Query.Internal;
 using Projeto_File.Data;
 using Projeto_File.Models;
 
@@ -56,6 +59,18 @@ namespace Projeto_File.Controllers
 
             //Caso o modelo esteja inconsistente.
             return View(hospital);
+        }
+
+        public IActionResult BuscarHospital()
+        {
+            var lista = _dbContext.Hospitais.ToList();
+            
+            int objeto = lista.Last().HospitalId;
+
+            byte[] imagem = _dbContext.Hospitais.Find(objeto).Foto;
+            
+            return File(imagem, "image/jpg");
+
         }
     }
 }
