@@ -26,6 +26,12 @@ namespace Projeto_File.Controllers
             _dbContext = dbContext;
         }
 
+        public IActionResult ListarUsuarios()
+        {
+
+            return Content("Exemplo");
+        }
+
         [HttpGet]
         public IActionResult Registrar()
         {

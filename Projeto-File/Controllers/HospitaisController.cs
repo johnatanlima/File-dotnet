@@ -63,7 +63,7 @@ namespace Projeto_File.Controllers
 
         public IActionResult BuscarHospital()
         {
-            var lista = _dbContext.Hospitais.ToList();
+            var lista = _dbContext.Hospitais.ToList(); 
             
             int objeto = lista.Last().HospitalId;
 

@@ -9,10 +9,19 @@
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
 
-<div class="justify-content-center">
+<div class="row">
+    <div class="col-lg-6">
     <h3 class="col-lg-6 alert-light"> Última Imagem adicionada </h3>
    
-    @{ 
-       <img class="img-fluid" src="@Url.Action("BuscarHospital", "Hospitais", Model)" />  
-    }
+        @{ 
+           <img class="img-fluid" src="@Url.Action("BuscarHospital", "Hospitais", Model)" />  
+        }
+    </div>
+
+   <aside>
+       <div class="col-lg-3 float-lg-right border-0 border-dark">
+           <p> Só um teste </p>
+       </div>
+   </aside>
+
 </div>
