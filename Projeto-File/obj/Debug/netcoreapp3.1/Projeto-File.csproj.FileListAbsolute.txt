@@ -422,3 +422,4 @@ C:\Users\johw2\Desktop\Workspace .NET Core\File-dotnet\Projeto-File\obj\Debug\ne
 C:\Users\johw2\Desktop\Workspace .NET Core\File-dotnet\Projeto-File\obj\Debug\netcoreapp3.1\Razor\Views\Usuarios\AssociarPermissao.cshtml.g.cs
 C:\Users\johw2\Desktop\Workspace .NET Core\File-dotnet\Projeto-File\obj\Debug\netcoreapp3.1\Projeto-File.csprojAssemblyReference.cache
 C:\Users\johw2\Desktop\Workspace .NET Core\File-dotnet\Projeto-File\obj\Debug\netcoreapp3.1\Razor\Views\Hospitais\AdicionarHospital.cshtml.g.cs
+C:\Users\johw2\Desktop\Workspace .NET Core\File-dotnet\Projeto-File\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Usuarios\Default.cshtml.g.cs

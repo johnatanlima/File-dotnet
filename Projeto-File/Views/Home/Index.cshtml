@@ -10,18 +10,29 @@
 </div>
 
 <div class="row">
-    <div class="col-lg-6">
-    <h3 class="col-lg-6 alert-light"> Última Imagem adicionada </h3>
-   
-        @{ 
-           <img class="img-fluid" src="@Url.Action("BuscarHospital", "Hospitais", Model)" />  
-        }
-    </div>
+    <div class="col-6">
+        <h5 class=""> Última Imagem adicionada </h5>
+        <div class="d-flex mb-2">
+            <div class="mr-1">
+                <img width="150" height="150" class="img-fluid" src="@Url.Action("BuscarHospital", "Hospitais", Model)" />
+            </div>
+            <div class="mr-1">
+                <img width="150" height="150" class="img-fluid" src="@Url.Action("BuscarHospital", "Hospitais", Model)" />
+            </div>
+            <div class="mr-1">
+                <img width="150" height="150" class="img-fluid" src="@Url.Action("BuscarHospital", "Hospitais", Model)" />
+            </div>
 
-   <aside>
-       <div class="col-lg-3 float-lg-right border-0 border-dark">
-           <p> Só um teste </p>
-       </div>
+        </div>
+        
+    </div>
+    
+    <div class="col-2 mr-1">
+        conteudo 
+    </div>
+   
+    <aside class="mr-1 float-right border-dark">
+       <h5><span class="oi oi-align-left small"></span> Usuários já cadastrados </h5>
    </aside>
 
 </div>
