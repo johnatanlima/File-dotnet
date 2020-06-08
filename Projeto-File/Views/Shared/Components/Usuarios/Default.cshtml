@@ -3,7 +3,30 @@
 <div class="container">
     <div class="row">
         <h3><span class="oi oi-align-left"></span>Usuários já cadastrados </h3>
+ 
+            <table class="table-striped  table table-responsive table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">   @Html.DisplayNameFor(item => item.Nome)</th>
+                        <th scope="col">@Html.DisplayNameFor(item => item.Sobrenome)</th>
+                        <th scope="col"> @Html.DisplayNameFor(item => item.Cidade) </th>
+                    </tr>
+                </thead>
+                    <tbody>
+                      @foreach (var item in Model) { 
+                      
+                                <tr>
+                                    <th> @Html.DisplayFor(modelItem => item.Nome) </th>
+                                    <th> @Html.DisplayFor(modelItem => item.Sobrenome) </th>
+                                    <th> @Html.DisplayFor(modelItem => item.Cidade) </th>
+                                   
+                                </tr>
+                            
+                      }        
 
 
+                    </tbody>
+            </table>
+            
     </div>
 </div>
