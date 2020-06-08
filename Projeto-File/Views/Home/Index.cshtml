@@ -9,35 +9,39 @@
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
 
-<div class="row">
-    <div class="col-6">
-        <h5 class=""> Últimas Imagens adicionadas </h5>
-        <div class="d-flex mb-2 justify-content-lg-around">
-            <div class="mr-1">
-                <img width="150" height="150" class="img-fluid" src="@Url.Action("BuscarHospital", "Hospitais", Model)" />
-            </div>
-            <div class="mr-1">
-                <img width="150" height="150" class="img-fluid" src="@Url.Action("BuscarHospital", "Hospitais", Model)" />
-            </div>
-            <div class="mr-1">
-                <img width="150" height="150" class="img-fluid" src="@Url.Action("BuscarHospital", "Hospitais", Model)" />
-            </div>
-            <div class="mr-1">
-                <img width="150" height="150" class="img-fluid" src="@Url.Action("BuscarHospital", "Hospitais", Model)" />
-            </div>
+<div class="container">
+    @*Div maior*@
+    <div class="mb-3 p-2" style="border: solid 1px green;">
+        <h5 class="p-1"> Últimas Imagens adicionadas </h5>
 
+        @*Div das fotos*@
+        <div class="d-flex flex-wrap p-3">
+            <div class="mr-2">
+                <img width="150" height="150" src="@Url.Action("BuscarHospital", "Hospitais", Model)" />
+            </div>
+            <div class="mr-1">
+                <img width="150" height="150" src="@Url.Action("BuscarHospital", "Hospitais", Model)" />
+            </div>
+            <div class="mr-1">
+                <img width="150" height="150" src="@Url.Action("BuscarHospital", "Hospitais", Model)" />
+            </div>
+            <div class="mr-1">
+                <img width="150" height="150" src="@Url.Action("BuscarHospital", "Hospitais", Model)" />
+            </div>
+            <div class="mr-1">
+                <img width="150" height="150" src="@Url.Action("BuscarHospital", "Hospitais", Model)" />
+            </div>
+            <div class="mr-1">
+                <img width="150" height="150" src="@Url.Action("BuscarHospital", "Hospitais", Model)" />
+            </div>
         </div>
-
     </div>
-
-    <div class="col-2 mr-1">
-        conteudo
-    </div>
-
-    <aside class="col-4 mr-1 float-right border-dark">
-        <h5><span class="oi oi-align-left small"></span> Usuários já cadastrados </h5>
-    </aside>
-
 </div>
 
-@await Component.InvokeAsync("Usuarios")
+    @*Div dos usuarios*@
+    <div class="table" style="border: solid 1px red;">
+        <h5 class="p-2 mr-2 align-content-center"><span class="oi oi-align-left small"></span> Usuários já cadastrados </h5>
+        @await Component.InvokeAsync("Usuarios")
+
+    </div>
+
